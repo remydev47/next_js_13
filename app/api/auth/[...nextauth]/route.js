@@ -3,6 +3,8 @@ import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google"
 import { signIn } from "next-auth/react";
 
+import { connectToDB } from "@utils/database";
+
 //declare the Handler
 
 const handler = NextAuth({
@@ -17,9 +19,15 @@ const handler = NextAuth({
     },
     async signIn({ profile }) {
         try {
-            
+            await connectToDB();
+
+            //check if the user exists
+
+            //if the user doesnt exist, create it
+            return true;
         } catch (error) {
-            
+            console.log(error);
+            return true;
         }
     }
 })
