@@ -19,6 +19,6 @@ const UserSchema = new Schema ({
 //the "models" object is provided by the mongoose library and stores all the registered models models
 
 
-const User = models.User || models("user", UserSchema);
+const User = models.User || model("user", UserSchema);
 
 export default User;
