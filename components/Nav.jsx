@@ -71,7 +71,7 @@ const Nav = () => {
     </div>
     {/* Mobile Navigation */}
     <div className="sm:hidden flex relative">
-      {session.user ? (
+      {session?.user ? (
         <div className='flex'>
            <Image 
              src={session?.user.image}
